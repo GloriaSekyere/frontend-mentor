@@ -4,6 +4,7 @@
     --bright-blue: hsl(245, 75%, 52%);
     --desaturated-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
+    --hover-blue: #756CF1;
 }
 * {
     margin: 0;
@@ -13,15 +14,17 @@
 body {
     font-family: "Red Hat Display", sans-serif;
     background: url("images/pattern-background-desktop.svg") no-repeat var(--pale-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-size: cover;
 }
 main {
     width: 25rem;
-    height: 70vh;
+    padding-bottom: 2rem;
     border-radius: 2rem;
     background-color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #main-img {
     max-width: 100%;
@@ -56,7 +59,6 @@ main {
     justify-content: space-between;
     align-items: center;
 }
-
 #pricing  div:nth-child(2){
     flex-basis: 45%;
     
@@ -69,7 +71,10 @@ main {
     color: var(--desaturated-blue);
     margin-top: 0.5rem;
 }
-
+#change:hover {
+    text-decoration: none;
+    color: var(--hover-blue);
+}
 #proceed {
     display: flex;
     justify-content: center;
@@ -85,9 +90,12 @@ main {
     color: #FFF;
     font-size: 1.05rem;
     font-weight: 700;
-    box-shadow: 0px 25px 13px rgba(218,213,245,0.6);
+    box-shadow: 0px 25px 10px rgba(218,213,245,0.4);
+    cursor: pointer;
 }
-
+#proceed button:hover {
+    background-color: var(--hover-blue);
+}
 #cancel {
     display: flex;
     justify-content: center;
@@ -98,7 +106,9 @@ main {
     border: none;
     background: none;
     font-weight: 700;
-    color: var(--desaturated-blue);
-    
-    
+    color: var(--desaturated-blue); 
+    cursor: pointer;
+}
+#cancel button:hover {
+    color: var(--dark-blue);
 }
